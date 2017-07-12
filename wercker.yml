@@ -1,0 +1,7 @@
+box: nekonenene/android-sdkmanager
+
+deploy:
+  steps:
+    - script:
+      name: build
+      code: ./gradlew assembleDebug
