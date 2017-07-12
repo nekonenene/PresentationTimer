@@ -5,3 +5,11 @@ deploy:
     - script:
       name: build
       code: ./gradlew assembleDebug
+
+    - script:
+      name: Upload to DeployGate
+      code: |
+        curl -F "file=app/build/outputs/apk/debug/app-debug.apk" \
+          -F "token=$DEPLOYGATE_API_KEY" \
+          -F "message=Auto Build" \
+          https://deploygate.com/api/users/nekonenene/PresentationTimer
