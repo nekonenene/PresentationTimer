@@ -9,7 +9,7 @@ deploy:
     - script:
       name: Upload to DeployGate
       code: |
-        curl -F "file=app/build/outputs/apk/debug/app-debug.apk" \
+        curl -F "file=@app/build/outputs/apk/debug/app-debug.apk" \
           -F "token=$DEPLOYGATE_API_KEY" \
           -F "message=Auto Build" \
-          https://deploygate.com/api/users/nekonenene/PresentationTimer
+          https://deploygate.com/api/users/nekonenene/apps
