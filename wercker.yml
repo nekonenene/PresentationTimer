@@ -1,5 +1,11 @@
 box: nekonenene/android-sdkmanager
 
+test:
+  steps:
+    - script:
+      name: unit testing
+      code: ./gradlew test
+
 deploy:
   steps:
     - script:
