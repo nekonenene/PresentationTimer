@@ -14,7 +14,7 @@ test:
       url: $SLACK_WEBHOOK_URL
       channel: circle-ci
       username: wercker
-      # notify_on: "failed"
+      notify_on: "failed"
 
 deploy:
   steps:
