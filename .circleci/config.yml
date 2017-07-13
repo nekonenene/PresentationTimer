@@ -14,6 +14,7 @@ jobs:
     docker:
       - image: nekonenene/android-sdkmanager
     steps:
+      - checkout
       - run:
           name: build
           command: ./gradlew assembleDebug
@@ -22,6 +23,7 @@ jobs:
     docker:
       - image: nekonenene/android-sdkmanager
     steps:
+      - checkout
       - run:
           name: deploy
           command: echo "デプロイするよ"
