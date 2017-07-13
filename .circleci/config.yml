@@ -1,0 +1,42 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/
+    docker:
+      - image: nekonenene/android-sdkmanager
+    steps:
+      - checkout
+      - run:
+        name: test
+        command: ./gradlew test
+  build:
+    working_directory: ~/
+    docker:
+      - image: nekonenene/android-sdkmanager
+    steps:
+      - checkout
+      - run:
+        name: build
+        command: ./gradlew assembleDebug
+  deploy:
+    working_directory: ~/
+    docker:
+      - image: nekonenene/android-sdkmanager
+    steps:
+      - checkout
+      - run:
+        name: deploy
+        command: echo "デプロイするよ"
+
+workflows:
+  version: 2
+  test_and_build:
+    jobs:
+      - test
+      - build:
+          requires: test
+      - deploy:
+          requires: build
+          filters:
+            branches:
+              only: master
