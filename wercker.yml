@@ -5,13 +5,18 @@ test:
     - script:
       name: unit testing
       code: ./gradlew test
+  after-steps:
+    - slack-notifier:
+      url: $SLACK_WEBHOOK_URL
+      channel: circle-ci
+      username: wercker
+      # notify_on: "failed"
 
 deploy:
   steps:
     - script:
       name: build
       code: ./gradlew assembleDebug
-
     - script:
       name: Upload to DeployGate
       code: |
@@ -19,3 +24,8 @@ deploy:
           -F "token=$DEPLOYGATE_API_KEY" \
           -F "message=Auto Build" \
           https://deploygate.com/api/users/nekonenene/apps
+  after-steps:
+    - slack-notifier:
+      url: $SLACK_WEBHOOK_URL
+      channel: circle-ci
+      username: wercker
