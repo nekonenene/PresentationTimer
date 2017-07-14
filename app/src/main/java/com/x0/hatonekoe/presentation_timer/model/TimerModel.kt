@@ -1,5 +1,6 @@
 package com.x0.hatonekoe.presentation_timer.model
 
 object TimerModel {
-    val millisUntilFinished = 9000
+    var initialMills: Long = 10000
+    var millisUntilFinished: Long = initialMills
 }
