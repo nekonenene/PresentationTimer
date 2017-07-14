@@ -17,6 +17,5 @@ class PresentationTimerApp: Application() {
                 .domainModule(DomainModule())
                 .presentationModule(PresentationModule())
                 .build()
-        appComponent.inject(this)
     }
 }

@@ -26,8 +26,8 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        PresentationTimerApp.appComponent.inject(this)
 
+        PresentationTimerApp.appComponent.inject(this)
         mPresenter.setFragment(this)
         mPresenter.onStart()
 

@@ -5,10 +5,12 @@ import com.x0.hatonekoe.presentation_timer.presentation.presenter.MainFragmentPr
 import com.x0.hatonekoe.presentation_timer.presentation.presenter.MainFragmentPresenterIF
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class PresentationModule {
     @Provides
+    @Singleton
     fun provideMainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresenterIF {
         return MainFragmentPresenter(useCase)
     }
