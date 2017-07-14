@@ -1,4 +1,4 @@
-package com.x0.hatonekoe.presentation_timer
+package com.x0.hatonekoe.presentation_timer.controller
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.x0.hatonekoe.presentation_timer.R
 
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -22,10 +23,12 @@ class MainActivityFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        Log.d(this.javaClass.name, "Hello World!!")
-
-        button.setOnClickListener {
-            Log.d(this.javaClass.name, "押されたよ")
+        timer_text.setOnClickListener {
+            Log.d(this.javaClass.name, " 押されたよ")
         }
+    }
+
+    fun setTimerText(text: String) {
+        timer_text.text = text
     }
 }

@@ -1,7 +1,8 @@
-package com.x0.hatonekoe.presentation_timer
+package com.x0.hatonekoe.presentation_timer.controller
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.x0.hatonekoe.presentation_timer.R
 
 class MainActivity : AppCompatActivity() {
 
