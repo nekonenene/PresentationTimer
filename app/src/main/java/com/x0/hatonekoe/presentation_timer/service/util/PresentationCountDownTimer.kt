@@ -19,6 +19,7 @@ class PresentationCountDownTimer(millisInFuture: Long, countDownInterval: Long):
         injectSelf()
     }
 
+    // init内はコンパイルされないようなので、injectは外側で関数化
     private fun injectSelf() {
         PresentationTimerApp.appComponent.inject(this)
     }
