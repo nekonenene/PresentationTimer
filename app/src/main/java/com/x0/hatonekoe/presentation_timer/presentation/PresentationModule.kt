@@ -1,6 +1,6 @@
 package com.x0.hatonekoe.presentation_timer.presentation
 
-import com.x0.hatonekoe.presentation_timer.domain.usecase.CurrentTimeUseCaseIF
+import com.x0.hatonekoe.presentation_timer.service.usecase.CurrentTimeUseCaseIF
 import com.x0.hatonekoe.presentation_timer.presentation.presenter.MainFragmentPresenter
 import com.x0.hatonekoe.presentation_timer.presentation.presenter.MainFragmentPresenterIF
 import dagger.Module

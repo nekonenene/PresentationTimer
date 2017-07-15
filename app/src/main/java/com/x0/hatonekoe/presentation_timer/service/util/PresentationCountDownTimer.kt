@@ -1,9 +1,9 @@
-package com.x0.hatonekoe.presentation_timer.util
+package com.x0.hatonekoe.presentation_timer.service.util
 
 import android.os.CountDownTimer
 import android.util.Log
-import com.x0.hatonekoe.presentation_timer.domain.entity.TimerStatus
-import com.x0.hatonekoe.presentation_timer.domain.usecase.CurrentTimeUseCaseIF
+import com.x0.hatonekoe.presentation_timer.model.entity.TimerStatus
+import com.x0.hatonekoe.presentation_timer.service.usecase.CurrentTimeUseCaseIF
 import com.x0.hatonekoe.presentation_timer.presentation.presenter.MainFragmentPresenterIF
 import javax.inject.Inject
 

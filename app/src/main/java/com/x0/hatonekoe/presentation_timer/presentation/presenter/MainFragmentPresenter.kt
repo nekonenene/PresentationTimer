@@ -2,10 +2,10 @@ package com.x0.hatonekoe.presentation_timer.presentation.presenter
 
 import android.util.Log
 import com.x0.hatonekoe.presentation_timer.PresentationTimerApp
-import com.x0.hatonekoe.presentation_timer.domain.entity.TimerStatus
-import com.x0.hatonekoe.presentation_timer.domain.usecase.CurrentTimeUseCaseIF
+import com.x0.hatonekoe.presentation_timer.model.entity.TimerStatus
+import com.x0.hatonekoe.presentation_timer.service.usecase.CurrentTimeUseCaseIF
 import com.x0.hatonekoe.presentation_timer.presentation.activity.MainFragment
-import com.x0.hatonekoe.presentation_timer.util.PresentationCountDownTimer
+import com.x0.hatonekoe.presentation_timer.service.util.PresentationCountDownTimer
 
 class MainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresenterIF {
     val mUseCase: CurrentTimeUseCaseIF = useCase

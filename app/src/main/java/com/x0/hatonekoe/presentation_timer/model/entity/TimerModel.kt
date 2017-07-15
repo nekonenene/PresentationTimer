@@ -1,4 +1,4 @@
-package com.x0.hatonekoe.presentation_timer.domain.entity
+package com.x0.hatonekoe.presentation_timer.model.entity
 
 class TimerModel(initialMillSec: Long = 10000) {
     var mInitialMillSec: Long = initialMillSec

@@ -1,10 +1,11 @@
 package com.x0.hatonekoe.presentation_timer
 
-import com.x0.hatonekoe.presentation_timer.domain.DomainModule
+import com.x0.hatonekoe.presentation_timer.model.ModelModule
+import com.x0.hatonekoe.presentation_timer.model.ServiceModule
 import com.x0.hatonekoe.presentation_timer.presentation.PresentationModule
 import com.x0.hatonekoe.presentation_timer.presentation.activity.MainFragment
 import com.x0.hatonekoe.presentation_timer.presentation.presenter.MainFragmentPresenter
-import com.x0.hatonekoe.presentation_timer.util.PresentationCountDownTimer
+import com.x0.hatonekoe.presentation_timer.service.util.PresentationCountDownTimer
 import dagger.Component
 import javax.inject.Singleton
 
@@ -13,9 +14,10 @@ import javax.inject.Singleton
  */
 @Component(
         modules = arrayOf(
-            ApplicationModule::class,
-            DomainModule::class,
-            PresentationModule::class
+                ApplicationModule::class,
+                ModelModule::class,
+                PresentationModule::class,
+                ServiceModule::class
         )
 )
 @Singleton

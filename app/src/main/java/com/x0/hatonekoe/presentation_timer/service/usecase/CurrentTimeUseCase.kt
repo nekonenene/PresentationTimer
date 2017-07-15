@@ -1,7 +1,7 @@
-package com.x0.hatonekoe.presentation_timer.domain.usecase
+package com.x0.hatonekoe.presentation_timer.service.usecase
 
-import com.x0.hatonekoe.presentation_timer.domain.entity.TimerStatus
-import com.x0.hatonekoe.presentation_timer.domain.repository.TimerRepositoryIF
+import com.x0.hatonekoe.presentation_timer.model.entity.TimerStatus
+import com.x0.hatonekoe.presentation_timer.model.repository.TimerRepositoryIF
 
 class CurrentTimeUseCase(timerRepository: TimerRepositoryIF): CurrentTimeUseCaseIF {
     val mTimerRepository: TimerRepositoryIF = timerRepository

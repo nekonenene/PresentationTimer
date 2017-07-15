@@ -1,6 +1,6 @@
-package com.x0.hatonekoe.presentation_timer.domain.usecase
+package com.x0.hatonekoe.presentation_timer.service.usecase
 
-import com.x0.hatonekoe.presentation_timer.domain.entity.TimerStatus
+import com.x0.hatonekoe.presentation_timer.model.entity.TimerStatus
 
 interface CurrentTimeUseCaseIF {
     fun getRemainingTimeString(): String

@@ -1,6 +1,6 @@
-package com.x0.hatonekoe.presentation_timer.domain.repository
+package com.x0.hatonekoe.presentation_timer.model.repository
 
-import com.x0.hatonekoe.presentation_timer.domain.entity.TimerModel
+import com.x0.hatonekoe.presentation_timer.model.entity.TimerModel
 
 /**
  * Created by radio7954 on 2017/07/15.
