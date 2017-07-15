@@ -9,4 +9,8 @@ class TimerRepository: TimerRepositoryIF {
     override fun timer1(): TimerModel {
         return TimerModel(10000)
     }
+
+    override fun timer2(): TimerModel {
+        return TimerModel(20000)
+    }
 }
