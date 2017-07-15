@@ -2,6 +2,7 @@ package com.x0.hatonekoe.presentation_timer
 
 import com.x0.hatonekoe.presentation_timer.model.ModelModule
 import com.x0.hatonekoe.presentation_timer.model.ServiceModule
+import com.x0.hatonekoe.presentation_timer.model.repository.TimerRepository
 import com.x0.hatonekoe.presentation_timer.presentation.PresentationModule
 import com.x0.hatonekoe.presentation_timer.presentation.activity.MainFragment
 import com.x0.hatonekoe.presentation_timer.service.util.PresentationCountDownTimer
@@ -23,4 +24,5 @@ import javax.inject.Singleton
 interface ApplicationComponent {
     fun inject(fragment: MainFragment)
     fun inject(util: PresentationCountDownTimer)
+    fun inject(repository: TimerRepository)
 }

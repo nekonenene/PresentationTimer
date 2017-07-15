@@ -11,6 +11,7 @@ class PresentationTimerApp: Application() {
         super.onCreate()
         appComponent = DaggerApplicationComponent
                 .builder()
+                .applicationModule(ApplicationModule(this))
                 .build()
     }
 }
