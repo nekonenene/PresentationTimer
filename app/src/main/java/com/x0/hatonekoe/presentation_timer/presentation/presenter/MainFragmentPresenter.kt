@@ -41,7 +41,7 @@ class MainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresente
 
     override fun onClick() {
         if (mPlayer.isPlaying) {
-            mPlayer.stop()
+            mPlayer.pause()
         }
 
         when (mUseCase.getTimerStatus()) {
