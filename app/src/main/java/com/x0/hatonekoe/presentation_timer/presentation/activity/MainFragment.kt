@@ -1,8 +1,8 @@
 package com.x0.hatonekoe.presentation_timer.presentation.activity
 
-import android.app.Fragment
 import android.content.Context
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,12 +32,12 @@ class MainFragment : Fragment() {
         super.onStart()
         mPresenter.onStart()
 
-        timer_text.setOnClickListener {
+        timerTextView.setOnClickListener {
             mPresenter.onClick()
         }
     }
 
     fun setTimerText(text: String) {
-        timer_text.text = text
+        timerTextView.text = text
     }
 }
