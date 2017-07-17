@@ -33,7 +33,7 @@ class MainFragment : Fragment() {
         mPresenter.onStart()
 
         timerTextView.setOnClickListener {
-            mPresenter.onClick()
+            mPresenter.onClickTimerTextView()
         }
     }
 

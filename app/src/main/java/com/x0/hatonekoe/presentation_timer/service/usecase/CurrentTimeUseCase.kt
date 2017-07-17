@@ -1,12 +1,7 @@
 package com.x0.hatonekoe.presentation_timer.service.usecase
 
-import android.content.Context
-import android.media.MediaPlayer
-import com.x0.hatonekoe.presentation_timer.PresentationTimerApp
-import com.x0.hatonekoe.presentation_timer.R
 import com.x0.hatonekoe.presentation_timer.model.entity.TimerStatus
 import com.x0.hatonekoe.presentation_timer.model.repository.TimerRepositoryIF
-import javax.inject.Inject
 
 class CurrentTimeUseCase(timerRepository: TimerRepositoryIF): CurrentTimeUseCaseIF {
     val mTimerRepository: TimerRepositoryIF = timerRepository

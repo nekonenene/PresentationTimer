@@ -16,11 +16,10 @@ class MainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresente
     lateinit var mCountDown: PresentationCountDownTimer
     @Inject
     lateinit var mContext: Context
-    val mPlayer: MediaPlayer
+    var mPlayer: MediaPlayer? = null
 
     init {
         injectSelf()
-        mPlayer = MediaPlayer.create(mContext, R.raw.alarm)
     }
 
     private fun injectSelf() {
@@ -39,11 +38,7 @@ class MainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresente
         mFragment.setTimerText(mUseCase.getRemainingTimeString())
     }
 
-    override fun onClick() {
-        if (mPlayer.isPlaying) {
-            mPlayer.pause()
-        }
-
+    override fun onClickTimerTextView() {
         when (mUseCase.getTimerStatus()) {
             TimerStatus.WAIT -> {
                 mCountDown = PresentationCountDownTimer(mUseCase.getRemainingMilliSec(), INTERVAL_MILLI_SEC)
@@ -57,6 +52,12 @@ class MainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresente
                 mUseCase.setTimerStatus(TimerStatus.WAIT)
             }
             TimerStatus.FINISH -> {
+                if (mPlayer != null && mPlayer!!.isPlaying) {
+                    mPlayer!!.stop()
+                    mPlayer!!.release()
+                    mPlayer = null
+                }
+
                 mUseCase.resetRemainingTime()
                 mFragment.setTimerText(mUseCase.getRemainingTimeString())
 
@@ -65,14 +66,24 @@ class MainFragmentPresenter(useCase: CurrentTimeUseCaseIF): MainFragmentPresente
         }
     }
 
+    /**
+     * タイマーの文字列を更新
+     * CountDownTimer の onTick() のたびに呼び出される
+     */
     override fun update() {
         mFragment.setTimerText(mUseCase.getRemainingTimeString())
     }
 
+    /**
+     * タイマー終了時の処理
+     * CountDownTimer の onFinish() にて呼び出される
+     */
     override fun onTimerFinish() {
+        // Play alarm
+        mPlayer = MediaPlayer.create(mContext, R.raw.alarm)
+        mPlayer!!.isLooping = true
+        mPlayer!!.start()
+
         mUseCase.setTimerStatus(TimerStatus.FINISH)
-        mPlayer.isLooping = true
-        mPlayer.seekTo(0)
-        mPlayer.start()
     }
 }

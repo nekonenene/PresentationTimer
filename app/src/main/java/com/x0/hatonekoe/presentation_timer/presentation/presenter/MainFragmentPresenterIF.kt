@@ -5,7 +5,7 @@ import com.x0.hatonekoe.presentation_timer.presentation.activity.MainFragment
 interface MainFragmentPresenterIF {
     fun setFragment(fragment: MainFragment)
     fun onStart()
-    fun onClick()
+    fun onClickTimerTextView()
     fun update()
     fun onTimerFinish()
 }
