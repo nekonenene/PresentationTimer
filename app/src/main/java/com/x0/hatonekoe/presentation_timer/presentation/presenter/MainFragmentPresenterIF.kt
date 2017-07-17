@@ -7,4 +7,5 @@ interface MainFragmentPresenterIF {
     fun onStart()
     fun onClick()
     fun update()
+    fun onTimerFinish()
 }
