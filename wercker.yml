@@ -26,11 +26,15 @@ deploy:
           --gradle-user-home=$WERCKER_CACHE_DIR/.gradle \
           assembleDebug
     - script:
+      name: Get latest commit message
+      code: |
+        LATEST_COMMIT_MESSAGE=`git log -1 --oneline | cut -b 9-`
+    - script:
       name: Upload to DeployGate
       code: |
         curl -F "file=@app/build/outputs/apk/debug/app-debug.apk" \
           -F "token=$DEPLOYGATE_API_KEY" \
-          -F "message=Auto Build" \
+          -F "message=$LATEST_COMMIT_MESSAGE" \
           https://deploygate.com/api/users/nekonenene/apps
   after-steps:
     - slack-notifier:
